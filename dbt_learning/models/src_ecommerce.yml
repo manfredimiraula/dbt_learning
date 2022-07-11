@@ -1,0 +1,25 @@
+version: 2
+
+sources: 
+  - name: public # this is actually the name of the schema
+    description: A direct import of the raw source from csv.
+    database: dbt
+    schema: public
+    tables: 
+      - name: ecommerce
+        columns:
+        - name: column1
+          description: This is the product id. Combined with the brand name becomes the primary key of the table
+          tests: 
+            - not_null
+        - name: brandname
+          description: This is the name of the brand. Combined with the product id (column1) becomes the primary key of the table
+          tests: 
+            - not_null
+        - name: deatils
+        - name: sizes
+        - name: mrp
+        - name: sellprice
+        - name: discount
+        - name: category
+      

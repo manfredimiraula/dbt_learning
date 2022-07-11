@@ -15,5 +15,5 @@ select
 			when discount = '70% off' then '0.7'
 		end)	 
 	end as float) as discount_price
-from public.ecommerce where brandname != 'Nan'
+from {{source('public', 'ecommerce')}} where brandname != 'Nan'
 order by brandname, product_id asc

@@ -5,6 +5,6 @@ select
 	mrp, 
 	sizes, 
 	category
-from public.ecommerce where brandname != 'Nan'
+from {{source('public', 'ecommerce')}} where brandname != 'Nan'
 order by brandname, product_id asc
 
