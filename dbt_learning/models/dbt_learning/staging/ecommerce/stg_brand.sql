@@ -1,5 +1,3 @@
-{{ config(materialized='table') }}
-
 select 
     distinct column1 as product_id, 
     brandname as brand_name  
